@@ -1,0 +1,12 @@
+[Unit]
+Description=Twilio Server
+After=multi-user.target
+
+[Service]
+User=pi
+Type=idle
+ExecStart=/usr/bin/python /home/pi/Dropbox/twilioServer_daemon.py >> /home/pi/Dropbox/twilioServer.log 2>&1
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
